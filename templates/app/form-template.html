@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="{% static 'assets/images/icon.svg' %}"
+      type="image/x-icon"
+    />
+    <!-- Icon - IconMonster -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.iconmonstr.com/1.3.0/css/iconmonstr-iconic-font.min.css"
+    />
+    <!-- Mumble UI -->
+    <link
+      rel="stylesheet"
+      href=" {% static 'assets/uikit/styles/uikit.css' %}"
+    />
+    <!-- Dev Search UI -->
+    <link rel="stylesheet" href="{% static 'assets/styles/app.css' %}" />
+
+    <title>DevSearch - Connect with Developers!</title>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <div class="container container--narrow">
+        <a href="/" class="header__logo">
+          <img src="images/logo.svg" alt="DevSearch Logo" />
+        </a>
+        <nav class="header__nav">
+          <input type="checkbox" id="responsive-menu" />
+          <label for="responsive-menu" class="toggle-menu">
+            <span>Menu</span>
+            <div class="toggle-menu__lines"></div>
+          </label>
+          <ul class="header__menu">
+            <li class="header__menuItem">
+              <a href="">Bible Study Lessons</a>
+            </li>
+            <li class="header__menuItem">
+              <a href="">Bible Study Videos</a>
+            </li>
+            <li class="header__menuItem">
+              <a href="">Promises of God</a>
+            </li>
+            <li class="header__menuItem">
+              <a
+                href="https://www.amazingfacts.org/bible-study/free-online-bible-school"
+                >Amazing facts</a
+              >
+            </li>
+            <li class="header__menuItem">
+              <a href="" class="btn btn--sub">Add Project</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Section -->
+    <!-- CREATE PROJECT ON UI FILE -->
+    <main class="formPage my-xl">
+      <div class="content-box">
+        <div class="formWrapper">
+          <a class="backButton" href="#"><i class="im im-angle-left"></i></a>
+          <br />
+
+          <form
+            class="form"
+            method="POST"
+            enctype="multipart/form-data"
+            action=" "
+          >
+            {% csrf_token %}
+            <!-- Input:Text -->
+            {% for field in form%}
+            <div class="form__field">
+              <label for="formInput#text">{{field.label}} </label>
+              {{field}}
+            </div>
+            {% endfor %}
+            <input
+              class="btn btn--sub btn--lg my-md"
+              type="submit"
+              value="Submit"
+            />
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

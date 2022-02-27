@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+    <style>
+        .wrap {
+          margin: 5rem auto;
+          border: 2px solid black;
+          background-color: #eee;
+          padding: 1rem;
+        }
+        .wrap h1 {
+          font: size 4rem;
+          font-weight: 700;
+          color:orangered
+        }
+        .wrap p {
+          font: size 2rem;
+          font-weight: 400;
+          color:blue
+        }
+        .pic{
+            width: 5rem;
+            height: 5rem;
+        }
+      </style>
+  </head>
+  <body>
+    
+      <div class="wrap">
+          <!-- <img class="pic"src="https://drive.google.com/file/d/1htHESheDLTSkpp5wNX9IIfO5IYXbE2DS/view?usp=sharing" alt="me"> -->
+        <h1>Good morninng {{name}}</h1>
+        <p>
+          Your subject {{subject}}, is submitted via your email {{email}} to us
+        </p>
+        <p>
+           We will inspect your message <br> {{body}} <br> We will reply you soon
+          </p>
+      </div>
+    </body>
+   </div>
+</html>
